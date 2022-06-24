@@ -12,7 +12,7 @@ function App() {
   // Xử lý logic bài 3
   const [circleMode,setCircleMode] = useState('false')
   const handleChangeShape = () => {
-    setCircleMode((prev) => !prev);
+    setCircleMode((circleMode) => ((circleMode=='true') ? 'false' : 'true'));
   }
   return (
     <div className="App">
@@ -35,7 +35,7 @@ function App() {
       <hr/>
       
       <h2>Bài 3.3</h2>
-      <div className={`square ${circleMode && 'circle'}`}></div> <br/>
+      <div className={`square ${(circleMode=='true') && 'circle'}`}></div> <br/>
       <button onClick={handleChangeShape}>Change Shape</button>
 
     </div>
